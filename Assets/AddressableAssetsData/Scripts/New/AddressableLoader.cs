@@ -14,7 +14,8 @@ namespace NewLoader
         public Button loadBut;
         private void Start()
         {
-            loadBut.onClick.AddListener(() => {
+            loadBut.onClick.AddListener(() =>
+            {
                 //reload json file,and load assets
                 LoadFile();
             });
@@ -41,7 +42,7 @@ namespace NewLoader
                 {
                     Debug.Log("Catalog loaded successfully");
                     // 现在可以加载资源了
-                    
+
                     LoadAddressableAsset();
                 }
                 else
@@ -59,9 +60,9 @@ namespace NewLoader
                 if (op.Status == AsyncOperationStatus.Succeeded)
                 {
                     GameObject loadedObject = op.Result;
-                   GameObject tempGo =  Instantiate(loadedObject);
+                    GameObject tempGo = Instantiate(loadedObject);
                     tempGo.AddComponent<Rigidbody>();
-                    Destroy(tempGo,1);
+                    Destroy(tempGo, 1);
                 }
                 else
                 {
